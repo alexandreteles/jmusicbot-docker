@@ -4,7 +4,11 @@ on:
   workflow_dispatch:
     inputs:
           ref:
-            description: "Tag or branch to build the release"
+            description: "Commit to build the release from"
+            required: true
+            default: ''
+          tag:
+            description: "Tag for the built image"
             required: true
             default: ''
 
@@ -45,12 +49,12 @@ jobs:
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7,linux/ppc64le,linux/s390x
           push: true
           tags: |
-            alexandreteles/jmusicbot:${{ github.event.inputs.ref }}
+            alexandreteles/jmusicbot:${{ github.event.inputs.tag }}
             
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'docker.io/alexandreteles/jmusicbot:${{ github.event.inputs.ref }}'
+          image-ref: 'docker.io/alexandreteles/jmusicbot:${{ github.event.inputs.tag }}'
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results.sarif'
