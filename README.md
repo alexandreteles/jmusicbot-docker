@@ -1,4 +1,6 @@
-[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/) ![GitHub last commit](https://img.shields.io/github/last-commit/alexandreteles/jmusicbot_docker) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alexandreteles/jmusicbot_docker/Build%20and%20push%20Docker%20image)
+[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
+![GitHub last commit](https://img.shields.io/github/last-commit/alexandreteles/jmusicbot_docker)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alexandreteles/jmusicbot_docker/Build%20and%20push%20Docker%20image)
 
 Simple docker image for the JMusicBot (a music bot for Discord). Based on [eclipse-temurin](https://hub.docker.com/_/eclipse-temurin) because we want fast security patches in case another log4j nightmare happens, without having to move Faster Than Light™ to change the Dockerfile or update the Java binaries in our system.
 
