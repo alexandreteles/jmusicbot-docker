@@ -41,11 +41,3 @@ jobs:
           push: true
           tags: |
             alexandreteles/jmusicbot:latest
-
-      - name: Update DockerHub description
-        id: description
-        uses: peter-evans/dockerhub-description@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: alexandreteles/jmusicbot
