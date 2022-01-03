@@ -9,7 +9,17 @@ Make sure to check the Dockerfile and the build workflow before using it. All bu
 Make sure you provide a `config.txt` file or the bot will not start, obviously. The image expects it to be on `/app/config.txt` so just add `-v /path/to/config.txt:/app/config.txt:ro` and you should be good to go. Example:
 
 ```
-$ docker run --name jmusicbot -d -v /path/to/config.txt:/app/config.txt:ro --restart=always alexandreteles/jmusicbot
+$ docker run --name jmusicbot -d -v /path/to/config.txt:/app/config.txt:ro \
+-v /path/to/serversettings.json:/app/serversettings.json:ro --restart=always \
+jagrosh/jmusicbot
+```
+
+If you want to use playlists, set the `playlistsFolder` location in your `config,txt` relative to the `/app` path (ex.: `playlistsFolder = "/app/playlists"`) and bind a local playlist folder to the bot container:
+
+```
+$ docker run --name jmusicbot -d -v /path/to/config.txt:/app/config.txt:ro \
+-v /path/to/serversettings.json:/app/serversettings.json:ro \
+-v /path/to/playlists:/app/playlists:ro --restart=always jagrosh/jmusicbot
 ```
 
 This image may or may not be updated to use environment variables, probably not.
