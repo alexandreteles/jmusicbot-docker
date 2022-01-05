@@ -45,12 +45,12 @@ jobs:
           platforms: linux/arm64/v8
           push: true
           tags: |
-            alexandreteles/jmusicbot_semeru:latest
+            alexandreteles/jmusicbot:semeru-aarch64
             
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'docker.io/alexandreteles/jmusicbot_semeru:latest'
+          image-ref: 'docker.io/alexandreteles/jmusicbot:semeru-aarch64'
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results.sarif'
