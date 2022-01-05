@@ -1,4 +1,4 @@
-name: Build and push Docker image
+name: IBM Semeru (ARM64/OpenJ9)
 
 on:
   push:
