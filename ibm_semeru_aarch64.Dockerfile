@@ -18,8 +18,11 @@ WORKDIR /app
 COPY --from=downloader /app/JMusicBot.jar /app/JMusicBot.jar
 COPY --from=downloader /app/ibm-semeru-open-jre_aarch64_linux_*.tar.gz /app
 
-RUN tar -xzf ibm-semeru-open-jre_aarch64_linux_*.tar.gz --one-top-level=openjdk --strip-components=1
-RUN mv openjdk /opt/java/openjdk
+RUN mkdir openjdk
+RUN tar -xzf ibm-semeru-open-jre_aarch64_linux_*.tar.gz -C openjdk --strip-components=1
+RUN rm ibm-semeru-open-jre_aarch64_linux_*.tar.gz
+RUN mkdir /opt/java/
+RUN mv openjdk /opt/java/
 
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
