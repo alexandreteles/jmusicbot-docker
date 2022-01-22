@@ -25,3 +25,5 @@ $ docker run --name jmusicbot -d -v /path/to/config.txt:/app/config.txt:ro \
 This image may or may not be updated to use environment variables, probably not.
 
 We scan our image builds for vulnerabilites using Trivy and Dependabot, so you can check the Security and Issues tabs to see if there's something bad going on and open an issue with us or fork it and fix it yourself (remember to push it upstream, aka us, pretty please).
+
+P.S.: yes, we now have a build that uses OpenJ9 thru IBM Semeru Runtimes. That's what we currently run in production (gotta go fast), but run it at your own risk as JMusicBot isn't tested against this JVM. If anything we shouldn't be using it ourselves, but as far as our tests go it's rock stable.
