@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  JMusicBot:
+    container_name: JMusicBot
+    image: alexandreteles/jmusicbot
+    restart: always
+    volumes:
+      - /path/to/config.txt:/app/config.txt:ro
+      - /path/to/serversettings.json:/app/serversettings.json:ro
+      - /path/to/playlists:/app/playlists:ro
