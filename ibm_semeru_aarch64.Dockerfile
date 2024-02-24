@@ -7,7 +7,7 @@ WORKDIR /app
 
 RUN gh release download --pattern "JMusicBot-*.jar" --repo jagrosh/MusicBot
 RUN mv JMusicBot-*.jar JMusicBot.jar
-RUN gh release download --pattern "ibm-semeru-open-jre_aarch64_linux_*.tar.gz" --repo ibmruntimes/semeru17-binaries
+RUN gh release download --pattern "ibm-semeru-open-jre_aarch64_linux_*.tar.gz" --repo ibmruntimes/semeru21-binaries
 
 FROM ubuntu:latest
 
