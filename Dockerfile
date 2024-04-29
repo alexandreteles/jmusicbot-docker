@@ -5,7 +5,7 @@ WORKDIR /app
 RUN gh release download --pattern "JMusicBot-*.jar" --repo jagrosh/MusicBot
 RUN mv JMusicBot-*.jar JMusicBot.jar
 
-FROM eclipse-temurin:21-jre-jammy
+FROM eclipse-temurin:latest
 COPY --from=downloader /app/JMusicBot.jar /app/JMusicBot.jar
 WORKDIR /app
 ENTRYPOINT ["java", "-Dconfig=/app/config.txt", "-Dnogui=true", "-jar", "/app/JMusicBot.jar"]
